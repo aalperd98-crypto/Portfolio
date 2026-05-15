@@ -81,6 +81,25 @@ body {
 .nav-links a.active { color:var(--ink); }
 .nav-links a.active::after { width:100%; }
 
+/* Hamburger — masaüstünde gizli */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #0e0e0e;
+    transition: 0.3s;
+}
+
 .navbar-spacer { height: 88px; }
 
 /* ── ANIMATIONS ─────────────────── */
@@ -618,41 +637,6 @@ hr.divider { border:none; border-top:1px solid var(--border); margin:5rem 0; }
 
 /* ── RESPONSIVE ─────────────────────── */
 @media (max-width: 768px) {
-    .quick-stats { grid-template-columns: 1fr; }
-    .about-grid  { grid-template-columns: 1fr; gap:3rem; }
-    .about-info-block { position:static; }
-    .contact-grid { grid-template-columns: 1fr; gap:3rem; }
-    .footer-inner { flex-direction:column; text-align:center; }
-}
-@media (max-width: 480px) {
-    .nav-links { display:none; }
-    .projects-grid { grid-template-columns: 1fr; }
-    .skills-grid { grid-template-columns: 1fr; }
-    .interests-grid { grid-template-columns: repeat(2, 1fr); }
-}
-/* HAMBURGER BUTONU */
-.hamburger {
-    display: none; /* Masaüstünde gizli */
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 1001;
-}
-
-.hamburger span {
-    display: block;
-    width: 25px;
-    height: 2px;
-    background-color: #fff;
-    transition: 0.3s;
-}
-
-/* --- GÜNCEL MOBİL MENÜ SİSTEMİ --- */
-/* --- KESİN ÇÖZÜM: MOBİL NAVIGASYON --- */
-/* ── RESPONSIVE ─────────────────────── */
-@media (max-width: 768px) {
     .quick-stats { grid-template-columns: repeat(3, 1fr); }
     .stat-box { padding: 1.5rem 0.5rem; }
     .stat-box h3 { font-size: 1.8rem; }
@@ -663,30 +647,16 @@ hr.divider { border:none; border-top:1px solid var(--border); margin:5rem 0; }
     .footer-inner { flex-direction:column; text-align:center; }
 }
 
-    /* Hamburger Buton Görünürlüğü */
+/* ── MOBİL MENÜ (sadece 480px ve altı) ── */
+@media (max-width: 480px) {
     .hamburger {
-        display: flex !important; /* Mobilde mutlaka göster */
-        flex-direction: column;
-        gap: 5px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 10px;
-        z-index: 1001;
+        display: flex;
     }
-
-    /* Çizgilerin Rengi (Siyah yapıldı ki beyaz fonda görünsün) */
-    .hamburger span {
-        display: block;
-        width: 25px;
-        height: 2px;
-        background-color: #0e0e0e !important; 
-        transition: 0.3s;
+    .nav-container {
+        position: relative;
     }
-
-    /* Menü Kapalıyken Gizle */
     .nav-links {
-        display: none; 
+        display: none;
         flex-direction: column;
         position: absolute;
         top: 100%;
@@ -698,15 +668,15 @@ hr.divider { border:none; border-top:1px solid var(--border); margin:5rem 0; }
         box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         z-index: 1000;
     }
-
-    /* Menü Açıldığında Göster */
     .nav-links.active,
     .nav-links.mobile-active {
-        display: flex !important;
+        display: flex;
     }
-
     .nav-links li {
         margin: 10px 0;
         text-align: center;
     }
+    .projects-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .interests-grid { grid-template-columns: repeat(2, 1fr); }
 }
