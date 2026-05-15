@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim | Alper Dur</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">ALPER<span>.</span>DUR</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="about.html">Hakkımda</a></li>
+                <li><a href="projects.html">Projeler</a></li>
+                <li><a href="contact.html" class="active">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="navbar-spacer"></div>
+
+    <main class="container">
+
+        <!-- PAGE HERO -->
+        <div class="page-hero">
+            <div class="section-label fade-1">İletişim</div>
+            <h1 class="fade-2">Birlikte bir şeyler<br><em>yapalım.</em></h1>
+            <p class="fade-3">Proje fikirleri, iş birlikleri veya sadece merhaba demek için ulaşabilirsiniz.</p>
+        </div>
+
+        <!-- CONTACT SECTION -->
+        <section class="contact-section">
+            <div class="contact-grid">
+
+                <!-- LEFT: contact links -->
+                <div class="contact-info fade-3">
+                    <h2>İletişime Geç</h2>
+                    <p>Her türlü soru ve proje önerisi için aşağıdaki kanallardan ulaşabilirsiniz. En kısa sürede geri dönerim.</p>
+
+                    <a href="mailto:aalperd98@gmail.com" class="contact-link-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <span class="contact-label">E-posta</span>
+                            <span class="contact-value">aalperd98@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <a href="https://github.com/aalperd98-crypto" target="_blank" class="contact-link-item">
+                        <div class="contact-icon">🐙</div>
+                        <div>
+                            <span class="contact-label">GitHub</span>
+                            <span class="contact-value">github.com/aalperd98-crypto</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/alper-dur-36b83a3a2" target="_blank" class="contact-link-item">
+                        <div class="contact-icon">💼</div>
+                        <div>
+                            <span class="contact-label">LinkedIn</span>
+                            <span class="contact-value">linkedin.com/in/alper-dur-36b83a3a2</span>
+                        </div>
+                    </a>
+
+                    <a href="#" class="contact-link-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <span class="contact-label">Konum</span>
+                            <span class="contact-value">İzmir, Türkiye</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- RIGHT: CV download -->
+                <div class="cv-section fade-4">
+                    <h3>Özgeçmiş İndir</h3>
+                    <p>Eğitim, beceriler ve projelerimi içeren özgeçmişime aşağıdan ulaşabilirsiniz. Türkçe ve İngilizce versiyonlar mevcuttur.</p>
+                    <div class="cv-buttons">
+                        <a href="Alper_Dur_CV_TR.pdf" class="btn-cv tr" download>
+                            <span>🇹🇷 Türkçe CV İndir (PDF)</span>
+                            <span class="cv-arrow">↓</span>
+                        </a>
+                        <a href="Alper_Dur_CV_EN.pdf" class="btn-cv en" download>
+                            <span>🇬🇧 English CV (PDF)</span>
+                            <span class="cv-arrow">↓</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <a href="index.html" class="footer-logo">ALPER<span>.</span>DUR</a>
+            <span class="footer-copy">© 2026 · İzmir, Türkiye</span>
+            <div class="social-links">
+                <a href="https://github.com/aalperd98-crypto" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/alper-dur-36b83a3a2" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 30);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alper Dur | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">ALPER<span>.</span>DUR</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Ana Sayfa</a></li>
+                <li><a href="about.html">Hakkımda</a></li>
+                <li><a href="projects.html">Projeler</a></li>
+                <li><a href="contact.html">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="navbar-spacer"></div>
+
+    <main class="container">
+
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-tag fade-1">İzmir, Türkiye — Yazılım Geliştirici</div>
+            <h1 class="fade-2">Geleceği<br><em>Kodluyorum.</em></h1>
+            <p class="fade-3">İzmir Ekonomi Üniversitesi Bilgisayar Programcılığı öğrencisi. Modern arayüzler ve güçlü backend sistemleri geliştiriyorum.</p>
+            <div class="hero-cta fade-4">
+                <a href="projects.html" class="btn-primary">Projelerimi İncele →</a>
+                <a href="contact.html" class="btn-secondary">Özgeçmişimi İndir</a>
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <div class="quick-stats fade-5">
+            <div class="stat-box">
+                <h3>3<span>+</span></h3>
+                <p>Deneyim Yılı</p>
+            </div>
+            <div class="stat-box">
+                <h3>15<span>+</span></h3>
+                <p>Tamamlanan Proje</p>
+            </div>
+            <div class="stat-box">
+                <h3>%<span>100</span></h3>
+                <p>Tutku</p>
+            </div>
+        </div>
+
+    <section class="projects-section">
+    <div class="section-label">Tüm Projeler</div>
+    <h2 class="section-title">Neler <em>İnşa Ettim?</em></h2>
+    
+    <div class="projects-grid">
+        
+        <div class="project-card">
+            <span class="project-tag">Event / PHP</span>
+            <h3>RapStage — Konser Platformu</h3>
+            <p>Türkiye'deki rap konserlerini takip etmeyi sağlayan, kullanıcı yönetimli ve dinamik bilet yönlendirme sistemine sahip modern bir bilet platformu.</p>
+            <div style="display:flex; flex-direction:column; gap:0.6rem;">
+                <a href="https://github.com/aalperd98-crypto/rapkonserleri" target="_blank" class="project-link">GitHub'da İncele →</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="img/los_brillantes.png" alt="Los Brillantes Beat Sitesi" class="project-card-image">
+            <span class="project-tag">Music / Web</span>
+            <h3>Prodüktörler İçin Beat Sitesi</h3>
+            <p>Müziğin için sadece bir altyapı değil, vizyonun için bir temel inşa ediyoruz.</p>
+            <div style="display:flex; flex-direction:column; gap:0.6rem;">
+                <a href="https://losbrillantes.com/" target="_blank" class="project-link">Siteyi Ziyaret Et →</a>
+                <a href="https://github.com/aalperd98-crypto/los-brillantes" target="_blank" class="project-link">GitHub'da İncele →</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <span class="project-tag">Productivity</span>
+            <h3>AD Workspace</h3>
+            <p>Hedeflerinizi günlük, haftalık ve aylık periyotlarda organize eden profesyonel bir verimlilik çözümü.</p>
+            <div style="display:flex; flex-direction:column; gap:0.6rem;">
+                <a href="https://github.com/aalperd98-crypto/todolist" target="_blank" class="project-link">GitHub'da İncele →</a>
+            </div>
+        </div>
+
+        
+
+    </div>
+</section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <a href="index.html" class="footer-logo">ALPER<span>.</span>DUR</a>
+            <span class="footer-copy">© 2026 · İzmir, Türkiye</span>
+            <div class="social-links">
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 30);
+        });
+    </script>
+
+</body>
+</html>
