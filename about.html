@@ -160,12 +160,12 @@
     const mobileToggle = document.getElementById('mobile-toggle');
     const navLinks = document.querySelector('.nav-links');
 
-    // Sayfa kaydırma efekti
+   
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 30);
     });
 
-    // Mobil menü aç/kapat (Tıklama hatasını önlemek için kontrol eklendi)
+   
     if (mobileToggle) {
         mobileToggle.addEventListener('click', (e) => {
             e.stopPropagation(); // Tıklamanın dışarı taşmasını önle
@@ -173,7 +173,7 @@
         });
     }
 
-    // Menü dışına tıklandığında kapat
+
     document.addEventListener('click', (e) => {
         if (navLinks.classList.contains('mobile-active') && !navbar.contains(e.target)) {
             navLinks.classList.remove('mobile-active');
