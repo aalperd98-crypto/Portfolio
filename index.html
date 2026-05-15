@@ -103,32 +103,34 @@
             <a href="index.html" class="footer-logo">ALPER<span>.</span>DUR</a>
             <span class="footer-copy">© 2026 · İzmir, Türkiye</span>
             <div class="social-links">
-                <a href="https://github.com/aalperd98-crypto">GitHub</a>
-                <a href="https://www.linkedin.com/in/alper-dur-36b83a3a2">LinkedIn</a>
+                <a href="#">GitHub</a>
+                <a href="#">LinkedIn</a>
             </div>
         </div>
     </footer>
-<script>
+
+  <script>
+    const navbar = document.getElementById('navbar');
     const mobileToggle = document.getElementById('mobile-toggle');
     const navLinks = document.querySelector('.nav-links');
-    const navbar = document.getElementById('navbar');
 
-    // Scroll efekti
+    // Sayfa kaydırma efekti
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 30);
     });
 
-    // Menü açma/kapama
+    // Mobil menü aç/kapat (Tıklama hatasını önlemek için kontrol eklendi)
     if (mobileToggle) {
-        mobileToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
+        mobileToggle.addEventListener('click', (e) => {
+            e.stopPropagation(); // Tıklamanın dışarı taşmasını önle
+            navLinks.classList.toggle('mobile-active');
         });
     }
 
-    // Dışarı tıklandığında kapat
+    // Menü dışına tıklandığında kapat
     document.addEventListener('click', (e) => {
-        if (!navbar.contains(e.target)) {
-            navLinks.classList.remove('active');
+        if (navLinks.classList.contains('mobile-active') && !navbar.contains(e.target)) {
+            navLinks.classList.remove('mobile-active');
         }
     });
 </script>
