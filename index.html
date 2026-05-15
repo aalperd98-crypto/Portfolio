@@ -108,29 +108,27 @@
             </div>
         </div>
     </footer>
-
-  <script>
-    const navbar = document.getElementById('navbar');
+<script>
     const mobileToggle = document.getElementById('mobile-toggle');
     const navLinks = document.querySelector('.nav-links');
+    const navbar = document.getElementById('navbar');
 
-    
+    // Scroll efekti
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.scrollY > 30);
     });
 
-    
+    // Menü açma/kapama
     if (mobileToggle) {
-        mobileToggle.addEventListener('click', (e) => {
-            e.stopPropagation(); // Tıklamanın dışarı taşmasını önle
-            navLinks.classList.toggle('mobile-active');
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
     }
 
-   
+    // Dışarı tıklandığında kapat
     document.addEventListener('click', (e) => {
-        if (navLinks.classList.contains('mobile-active') && !navbar.contains(e.target)) {
-            navLinks.classList.remove('mobile-active');
+        if (!navbar.contains(e.target)) {
+            navLinks.classList.remove('active');
         }
     });
 </script>
