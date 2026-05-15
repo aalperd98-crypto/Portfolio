@@ -18,6 +18,11 @@
                 <li><a href="projects.html">Projeler</a></li>
                 <li><a href="contact.html" class="active">İletişim</a></li>
             </ul>
+            <button class="hamburger" id="mobile-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
         </div>
     </nav>
 
@@ -107,11 +112,29 @@
     </footer>
 
     <script>
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 30);
+    const navbar = document.getElementById('navbar');
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    // Sayfa kaydırma efekti
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 30);
+    });
+
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', (e) => {
+            e.stopPropagation(); // Tıklamanın dışarı taşmasını önle
+            navLinks.classList.toggle('mobile-active');
         });
-    </script>
+    }
+
+  t
+    document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('mobile-active') && !navbar.contains(e.target)) {
+            navLinks.classList.remove('mobile-active');
+        }
+    });
+</script>
 
 </body>
 </html>
