@@ -616,6 +616,40 @@ footer { padding:3.5rem 0; border-top:1px solid var(--border); }
 
 hr.divider { border:none; border-top:1px solid var(--border); margin:5rem 0; }
 
+/* ── RESPONSIVE ─────────────────────── */
+@media (max-width: 768px) {
+    .quick-stats { grid-template-columns: 1fr; }
+    .about-grid  { grid-template-columns: 1fr; gap:3rem; }
+    .about-info-block { position:static; }
+    .contact-grid { grid-template-columns: 1fr; gap:3rem; }
+    .footer-inner { flex-direction:column; text-align:center; }
+}
+@media (max-width: 480px) {
+    .nav-links { display:none; }
+    .projects-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .interests-grid { grid-template-columns: repeat(2, 1fr); }
+}
+/* HAMBURGER BUTONU */
+.hamburger {
+    display: none; /* Masaüstünde gizli */
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+/* --- GÜNCEL MOBİL MENÜ SİSTEMİ --- */
 /* --- KESİN ÇÖZÜM: MOBİL NAVIGASYON --- */
 @media (max-width: 768px) {
     /* Navbar içindeki container'ı buton sığacak şekilde ayarla */
@@ -663,7 +697,8 @@ hr.divider { border:none; border-top:1px solid var(--border); margin:5rem 0; }
     }
 
     /* Menü Açıldığında Göster */
-    .nav-links.active {
+    .nav-links.active,
+    .nav-links.mobile-active {
         display: flex !important;
     }
 
