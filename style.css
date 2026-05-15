@@ -618,16 +618,14 @@ hr.divider { border:none; border-top:1px solid var(--border); margin:5rem 0; }
 
 /* ── RESPONSIVE ─────────────────────── */
 @media (max-width: 768px) {
-    .quick-stats { grid-template-columns: repeat(3, 1fr); }
-    .stat-box { padding: 1.75rem 0.75rem; }
-    .stat-box h3 { font-size: 2rem; }
-    .stat-box p { font-size: 0.65rem; letter-spacing: 0.07em; }
+    .quick-stats { grid-template-columns: 1fr; }
     .about-grid  { grid-template-columns: 1fr; gap:3rem; }
     .about-info-block { position:static; }
     .contact-grid { grid-template-columns: 1fr; gap:3rem; }
     .footer-inner { flex-direction:column; text-align:center; }
 }
 @media (max-width: 480px) {
+    .nav-links { display:none; }
     .projects-grid { grid-template-columns: 1fr; }
     .skills-grid { grid-template-columns: 1fr; }
     .interests-grid { grid-template-columns: repeat(2, 1fr); }
@@ -653,14 +651,17 @@ hr.divider { border:none; border-top:1px solid var(--border); margin:5rem 0; }
 
 /* --- GÜNCEL MOBİL MENÜ SİSTEMİ --- */
 /* --- KESİN ÇÖZÜM: MOBİL NAVIGASYON --- */
+/* ── RESPONSIVE ─────────────────────── */
 @media (max-width: 768px) {
-    /* Navbar içindeki container'ı buton sığacak şekilde ayarla */
-    .nav-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        position: relative;
-    }
+    .quick-stats { grid-template-columns: repeat(3, 1fr); }
+    .stat-box { padding: 1.5rem 0.5rem; }
+    .stat-box h3 { font-size: 1.8rem; }
+    .stat-box p { font-size: 0.62rem; letter-spacing: 0.05em; }
+    .about-grid  { grid-template-columns: 1fr; gap:3rem; }
+    .about-info-block { position:static; }
+    .contact-grid { grid-template-columns: 1fr; gap:3rem; }
+    .footer-inner { flex-direction:column; text-align:center; }
+}
 
     /* Hamburger Buton Görünürlüğü */
     .hamburger {
@@ -683,9 +684,9 @@ hr.divider { border:none; border-top:1px solid var(--border); margin:5rem 0; }
         transition: 0.3s;
     }
 
-    /* Menü — animasyon için display yerine opacity+transform */
+    /* Menü Kapalıyken Gizle */
     .nav-links {
-        display: flex;
+        display: none; 
         flex-direction: column;
         position: absolute;
         top: 100%;
@@ -694,45 +695,18 @@ hr.divider { border:none; border-top:1px solid var(--border); margin:5rem 0; }
         background: #fafaf8;
         padding: 20px 0;
         border-bottom: 1px solid #e4e2db;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         z-index: 1000;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        pointer-events: none;
-        transition: opacity 0.28s var(--ease), transform 0.28s var(--ease), visibility 0.28s;
     }
 
-    /* Menü Açıldığında */
+    /* Menü Açıldığında Göster */
     .nav-links.active,
     .nav-links.mobile-active {
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: translateY(0) !important;
-        pointer-events: auto !important;
+        display: flex !important;
     }
 
-    /* Menü öğeleri sırayla gelsin */
     .nav-links li {
         margin: 10px 0;
         text-align: center;
-        opacity: 0;
-        transform: translateY(8px);
-        transition: opacity 0.22s var(--ease), transform 0.22s var(--ease);
     }
-
-    .nav-links.mobile-active li,
-    .nav-links.active li {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .nav-links.mobile-active li:nth-child(1),
-    .nav-links.active li:nth-child(1) { transition-delay: 0.05s; }
-    .nav-links.mobile-active li:nth-child(2),
-    .nav-links.active li:nth-child(2) { transition-delay: 0.10s; }
-    .nav-links.mobile-active li:nth-child(3),
-    .nav-links.active li:nth-child(3) { transition-delay: 0.15s; }
-    .nav-links.mobile-active li:nth-child(4),
-    .nav-links.active li:nth-child(4) { transition-delay: 0.20s; }
 }
