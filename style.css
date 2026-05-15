@@ -618,7 +618,10 @@ hr.divider { border:none; border-top:1px solid var(--border); margin:5rem 0; }
 
 /* ── RESPONSIVE ─────────────────────── */
 @media (max-width: 768px) {
-    .quick-stats { grid-template-columns: 1fr; }
+    .quick-stats { grid-template-columns: repeat(3, 1fr); }
+    .stat-box { padding: 1.75rem 0.75rem; }
+    .stat-box h3 { font-size: 2rem; }
+    .stat-box p { font-size: 0.65rem; letter-spacing: 0.07em; }
     .about-grid  { grid-template-columns: 1fr; gap:3rem; }
     .about-info-block { position:static; }
     .contact-grid { grid-template-columns: 1fr; gap:3rem; }
